@@ -11,7 +11,7 @@ title                    : "Nibelheim's Landscapes"
 title_separator          : "-"
 name                     : "Jose Toro"
 description              : "An amazing website."
-url                      : "https://www.wynkth.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "http://www.wynkth.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "wynkth/wynkth.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
@@ -82,7 +82,7 @@ author:
   bio              : "An amazing bored person."
   location         : "Pisa, Italy"
   email            : "wynkth@gmail.com"
-  uri              : "https://wynkth.com"
+  uri              : "http://shell.wynkth.com"
   bitbucket        : "wynkth"
   codepen          :
   dribbble         :
