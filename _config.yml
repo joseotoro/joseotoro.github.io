@@ -5,20 +5,29 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # `jekyll serve`. If you change this file, please restart the server process.
 
+# Theme Settings
+#
+# Review documentation to determine if you should use `theme` or `remote_theme`
+# https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/#installing-the-theme
+
+# theme                  : "minimal-mistakes-jekyll"
+# remote_theme           : "mmistakes/minimal-mistakes"
+minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+
 # Site Settings
-locale                   : "en"
+locale                   : "en-US"
 title                    : "Nibelheim's Landscapes"
 title_separator          : "-"
 name                     : "Jose Toro"
 description              : "An amazing website."
-url                      : "http://blog.joseotoro.com" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : "http://blog.joseotoro.com"
 baseurl                  : # the subpath of your site, e.g. "/blog"
-repository               : "joseotoro/joseotoro.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "joseotoro/joseotoro.github.io"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
   disqus:
     shortname            : "nibelheims-landscapes" # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
@@ -29,29 +38,40 @@ comments:
     num_posts            : # 5 (default)
     colorscheme          : # "light" (default), "dark"
 staticman:
-  allowedFields          : ['name', 'email', 'url', 'message']
-  branch                 : "master"
-  commitMessage          : "New comment."
-  filename               : comment-{@timestamp}
-  format                 : "yml"
-  moderation             : true
-  path                   : "docs/_data/comments/{options.slug}"
-  requiredFields         : ['name', 'email', 'message']
+  allowedFields          : # ['name', 'email', 'url', 'message']
+  branch                 : # "master"
+  commitMessage          : # "New comment."
+  filename               : # comment-{@timestamp}
+  format                 : # "yml"
+  moderation             : # true
+  path                   : # "/_data/comments/{options.slug}" (default)
+  requiredFields         : # ['name', 'email', 'message']
   transforms:
-    email                : "md5"
+    email                : # "md5"
   generatedFields:
     date:
-      type               : "date"
+      type               : # "date"
       options:
-        format           : "iso8601" # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+        format           : # "iso8601" (default), "timestamp-seconds", "timestamp-milliseconds"
+reCaptcha:
+  siteKey                :
+  secret                 :
 atom_feed:
   path                   : # blank (default) uses feed.xml
+search                   : # true, false (default)
+search_full_content      : # true, false (default)
+search_provider          : # lunr (default), algolia
+algolia:
+  application_id         : # YOUR_APPLICATION_ID
+  index_name             : # YOUR_INDEX_NAME
+  search_only_api_key    : # YOUR_SEARCH_ONLY_API_KEY
+  powered_by             : # true (default), false
 
 # SEO Related
 google_site_verification :
 bing_site_verification   :
-alexa_site_verification  :
 yandex_site_verification :
+naver_site_verification  :
 
 # Social Sharing
 twitter:
@@ -72,17 +92,19 @@ social:
 analytics:
   provider               : "google-universal" # false (default), "google", "google-universal", "custom"
   google:
-    tracking_id          : "UA-41535016-6"
+    tracking_id          : UA-41535016-7
+    anonymize_ip         : # true, false (default)
 
 
 # Site Author
 author:
   name             : "Jose Toro"
   avatar           : "/assets/images/bio.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "An amazing bored person."
-  location         : "Pisa, Italy"
+  bio              : "An amazing boring person."
+  location         : "Geneva, Switzerland"
   email            : "wynkth@gmail.com"
-  uri              : "http://joseotoro.com"
+  uri              :
+  home             : # null (default), "absolute or relative url to link to author home"
   500px            : "joseotoro"
   bitbucket        : "joseotoro"
   codepen          :
@@ -91,28 +113,27 @@ author:
   facebook         :
   foursquare       :
   github           : "joseotoro"
+  gitlab           :
   google_plus      :
   keybase          :
   instagram        : "joseotoro"
   lastfm           : "wynkuuh"
-  linkedin         : "joseaortegatoro"
+  linkedin         : "joseaortegatoro" # "john-doe-12345678" (the last part of your profile url, e.g. https://www.linkedin.com/in/john-doe-12345678)
   pinterest        :
   soundcloud       :
-  stackoverflow    : "3460305/jose-toro"
-  steam            : "wynkth"
+  stackoverflow    : "3460305/jose-toro" # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
+  steam            : "wynkth" # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
   twitter          : "joseotoro"
   vine             :
   weibo            :
   xing             :
-  youtube          :
+  youtube          : # "https://youtube.com/c/MichaelRoseDesign"
 
 
 # Reading Files
 include:
   - .htaccess
-  - blog
-  - photos
   - _pages
 exclude:
   - "*.sublime-project"
@@ -126,6 +147,7 @@ exclude:
   - assets/js/_main.js
   - assets/js/vendor
   - Capfile
+  - CHANGELOG
   - config
   - Gemfile
   - Gruntfile.js
@@ -135,7 +157,10 @@ exclude:
   - node_modules
   - package.json
   - Rakefile
+  - README
   - tmp
+  - /docs # ignore Minimal Mistakes /docs
+  - /test # ignore Minimal Mistakes /test
 keep_files:
   - .git
   - .svn
@@ -173,11 +198,11 @@ sass:
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show
 paginate_path: /page:num/
-timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+timezone: # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
 
 
-# Plugins
-gems:
+# Plugins (previously gems:)
+plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
@@ -229,6 +254,7 @@ compress_html:
   ignore:
     envs: development
 
+
 # Defaults
 defaults:
   # _posts
@@ -239,12 +265,6 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
+      comments: # true
       share: true
       related: true
-
-# Disqus
-comments:
-  provider: "disqus"
-  disqus:
-    shortname: "nibelheims-landscapes"
