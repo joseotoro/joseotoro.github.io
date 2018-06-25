@@ -122,7 +122,7 @@ author:
   pinterest        :
   soundcloud       :
   stackoverflow    : "3460305/jose-toro" # "123456/username" (the last part of your profile url, e.g. https://stackoverflow.com/users/123456/username)
-  steam            : "wynkth" # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
+  steam            : # "steamId" (the last part of your profile url, e.g. https://steamcommunity.com/id/steamId/)
   tumblr           :
   twitter          : "joseotoro"
   vine             :
